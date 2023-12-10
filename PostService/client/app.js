@@ -7,8 +7,8 @@ var packageDefinition = protoLoader.loadSync(PROTO_PATH)
 var post_proto = grpc.loadPackageDefinition(packageDefinition).post
 var client = new post_proto.PostService("0.0.0.0:40000", grpc.credentials.createInsecure());
 
-var number1 = readlineSync.question("Please indicate your update type.\n1. High Traffic\n2. Roadworks/Diversions\n")
-var number2 = readlineSync.question("What is the postcode you are currently in? (i.e. Dublin ___?)\n")
+var number1 = readlineSync.question("Please indicate your update type.\n1. High Traffic\n2. Roadworks/Diversions\n\n")
+var number2 = readlineSync.question("What is the postcode you are currently in? (i.e. Dublin ___?)\n\n")
 
 try{
     client.add({number1: number1, number2: number2}, function(error, response) {
