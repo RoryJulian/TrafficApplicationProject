@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package thread;
+
+service ThreadService {
+    rpc calculateThread (stream threadRequest) returns (threadReply) {}
+}
+
+message threadRequest{
+    double number = 1;
+}
+
+message threadReply {
+    double mean = 1;
+}

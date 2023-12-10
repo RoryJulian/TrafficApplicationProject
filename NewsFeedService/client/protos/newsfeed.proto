@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package newsfeed;
+
+service NewsfeedService {
+    rpc generateNewsfeed (NewsfeedRequest) returns (stream NewsfeedReply) {}
+}
+
+message NewsfeedRequest{
+    uint32 amount = 1;
+}
+
+message NewsfeedReply {
+    uint32 value = 1;
+}
