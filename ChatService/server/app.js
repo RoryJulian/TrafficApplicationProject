@@ -33,7 +33,7 @@ function makeChat(call){
       chats[chat.name] += 1 
       if(chat.chat > highestChat || !message){
         highestChat = chat.chat
-        message = "Current highest bidder is " + chat.name + " with a bid of " + highestChat
+        message = "Current highest expected delay is on " + chat.name + " with an estimated delay time of " + highestChat + " minutes."
       }
 
       for(var client in clients){

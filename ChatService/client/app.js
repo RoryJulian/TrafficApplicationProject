@@ -10,7 +10,7 @@ var client = new chat_proto.ChatService("0.0.0.0:40000", grpc.credentials.create
 
 var call = client.makeChat()
 call.on('data', function(resp){
-    console.log(resp.name + " made a bid of " + resp.chat + ". " + resp.name + " has made " + resp.chatNo + " bids. " + resp.message)
+    console.log(resp.name + " has an estimated delay time of " + resp.chat + " minutes. " + resp.name + " has been reported " + resp.chatNo + " time(s). " + resp.message)
 })
 
 call.on('end', function(){
@@ -21,9 +21,9 @@ call.on("error", function(e){
     console.log("An error occured")
 })
 
-var user = readlineSync.question("What is your name? ")
+var user = readlineSync.question("Welcome to the Incident Report Chat Service. Please enter the Road Name and County experiencing delays. \n\n")
 
-console.log("What is your bid? (q to Quit) ")
+console.log("What is your estimated delay time in minutes? (q to Quit) \n\n")
 var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
