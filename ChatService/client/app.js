@@ -18,7 +18,7 @@ call.on('end', function(){
 })
 
 call.on("error", function(e){
-    console.log("An error occured")
+    console.log("\nAn error occured, you are no longer connected to the server.")
 })
 
 var user = readlineSync.question("Welcome to the Incident Report Chat Service. Please enter the Road Name and County experiencing delays. \n\n")
