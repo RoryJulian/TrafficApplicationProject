@@ -19,5 +19,5 @@ call.on('end', function() {
 })
 
 call.on('error', function(e){
-    console.log("An error occured")
+    console.log("An error occured, you are no longer connected to the server.")
 })
