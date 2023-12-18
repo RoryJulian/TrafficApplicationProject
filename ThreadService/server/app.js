@@ -6,6 +6,7 @@ var packageDefinition = protoLoader.loadSync(
 )
 var thread_proto = grpc.loadPackageDefinition(packageDefinition).thread
 
+//The below function is used to take mutiple inputs from the user and when they confirm, a single output is provided 
 function calculateThread(call, callback) {
   var count = 0
   var total = 0

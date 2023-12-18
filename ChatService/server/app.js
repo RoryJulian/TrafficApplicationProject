@@ -17,6 +17,7 @@ var clients = {
 var highestChat = 0
 var message = null 
 
+//Below is the function used in order to create the chat for the user to engage with 
 function makeChat(call){
 
     call.on('data', function(chat) {
@@ -33,7 +34,7 @@ function makeChat(call){
       chats[chat.name] += 1 
       if(chat.chat > highestChat || !message){
         highestChat = chat.chat
-        message = "Current highest expected delay is on " + chat.name + " with an estimated delay time of " + highestChat + " minutes."
+        message = "\nCurrent highest expected delay is on " + chat.name + " with an estimated delay time of " + highestChat + " minutes.\n"
       }
 
       for(var client in clients){

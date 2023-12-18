@@ -6,6 +6,7 @@ var packageDefinition = protoLoader.loadSync(
 )
 var post_proto = grpc.loadPackageDefinition(packageDefinition).post
 
+//Below method takes two inputs from the user and adds them together to provide the total cost of their journey
 function add(call, callback){
     var number1 = parseInt(call.request.number1)
         var number2 = parseInt(call.request.number2)

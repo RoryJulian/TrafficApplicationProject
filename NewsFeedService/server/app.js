@@ -6,6 +6,7 @@ var packageDefinition = protoLoader.loadSync(
 )
 var newsfeed_proto = grpc.loadPackageDefinition(packageDefinition).newsfeed
 
+//Below function is used to create the newsfeed based on the selection of the user. Once user selects a number, that number of random numbers will be generated
 function generateNewsfeed(call, callback){
   for(var i=0; i < call.request.amount; i++){
     call.write({

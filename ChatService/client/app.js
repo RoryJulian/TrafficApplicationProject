@@ -10,20 +10,20 @@ var client = new chat_proto.ChatService("0.0.0.0:40000", grpc.credentials.create
 
 var call = client.makeChat()
 call.on('data', function(resp){
-    console.log(resp.name + " has an estimated delay time of " + resp.chat + " minutes. " + resp.name + " has been reported " + resp.chatNo + " time(s). " + resp.message)
+    console.log("\n" + resp.name + " has an estimated delay time of " + resp.chat + " minutes. " + resp.name + " has been reported " + resp.chatNo + " time(s). " + resp.message + "\n")
 })
 
 call.on('end', function(){
 
 })
-
+//Custom error message included for when users are no longer connected to the server 
 call.on("error", function(e){
-    console.log("\nAn error occured, you are no longer connected to the server.")
+    console.log("\nUh-Oh, an error occured, you are no longer connected to the server.\n")
 })
 
 var user = readlineSync.question("Welcome to the Incident Report Chat Service. Please enter the Road Name and County experiencing delays. \n\n")
 
-console.log("What is your estimated delay time in minutes? (q to Quit) \n\n")
+console.log("\nWhat is your estimated delay time in minutes? (q to Quit) \n\n")
 var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
