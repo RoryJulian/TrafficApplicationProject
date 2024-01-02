@@ -13,3 +13,4 @@ message NewsfeedRequest{
 message NewsfeedReply {
     uint32 value = 1;
 }
+
